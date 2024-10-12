@@ -1,2 +1,2 @@
-#### Projeto Individual para a disciplina de Desenvolvimento de API Rest
+#### Trabalho Individual para a disciplina de Desenvolvimento de API Rest
 Aluna: Larissa Benvenuti Antunes

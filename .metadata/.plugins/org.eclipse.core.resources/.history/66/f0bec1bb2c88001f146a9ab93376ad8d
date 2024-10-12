@@ -1,0 +1,48 @@
+package br.org.serratec.biblioteca.domain;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table
+public class Livro {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
+	@Column
+	private String titulo;
+
+	@Column
+	private String qtdPaginas;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public String getQtdPaginas() {
+		return qtdPaginas;
+	}
+
+	public void setQtdPaginas(String qtdPaginas) {
+		this.qtdPaginas = qtdPaginas;
+	}
+		
+}

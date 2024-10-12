@@ -1,0 +1,21 @@
+package br.org.serratec.biblioteca.domain;
+
+import java.time.LocalDate;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Embeddable
+public class Publicacao {
+
+	@Column
+	private String autor;
+
+	@Column
+	private LocalDate dataPublicacao;
+
+	@Column
+	private String editora;
+}

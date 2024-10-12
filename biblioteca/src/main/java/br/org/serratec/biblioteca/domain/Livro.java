@@ -17,53 +17,53 @@ import jakarta.validation.constraints.Size;
 @Table(name = "livro")
 public class Livro {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    @NotBlank(message = "Preencha o título do livro.")
-    @Size(max = 100)
-    @Column(nullable = false, length = 100)
-    private String titulo;
+	@NotBlank(message = "Preencha o título do livro.")
+	@Size(max = 100)
+	@Column(nullable = false, length = 100)
+	private String titulo;
 
-    @Column
-    private Integer qtdPaginas;
+	@Column
+	private Integer qtdPaginas;
 
-    @Valid
-    @Embedded
-    private Publicacao publicacao;
-    
-    public Long getId() {
-        return id;
-    }
+	@Valid
+	@Embedded
+	private Publicacao publicacao;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public String getTitulo() {
-        return titulo;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
+	public String getTitulo() {
+		return titulo;
+	}
 
-    public Integer getQtdPaginas() {
-        return qtdPaginas;
-    }
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
 
-    public void setQtdPaginas(Integer qtdPaginas) {
-        this.qtdPaginas = qtdPaginas;
-    }
+	public Integer getQtdPaginas() {
+		return qtdPaginas;
+	}
 
-    public Publicacao getPublicacao() {
-        return publicacao;
-    }
+	public void setQtdPaginas(Integer qtdPaginas) {
+		this.qtdPaginas = qtdPaginas;
+	}
 
-    public void setPublicacao(Publicacao publicacao) {
-        this.publicacao = publicacao;
-    }
+	public Publicacao getPublicacao() {
+		return publicacao;
+	}
+
+	public void setPublicacao(Publicacao publicacao) {
+		this.publicacao = publicacao;
+	}
 
 	@Override
 	public int hashCode() {
@@ -81,5 +81,5 @@ public class Livro {
 		Livro other = (Livro) obj;
 		return Objects.equals(id, other.id);
 	}
-	
+
 }

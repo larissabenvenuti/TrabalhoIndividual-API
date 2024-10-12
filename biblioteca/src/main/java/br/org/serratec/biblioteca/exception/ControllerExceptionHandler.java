@@ -17,21 +17,22 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 @ControllerAdvice
 public class ControllerExceptionHandler extends ResponseEntityExceptionHandler {
 
-    @Override
-    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
-                                                                  HttpHeaders headers, HttpStatusCode status, WebRequest request) {
-        List<String> erros = new ArrayList<>();
-        for (FieldError e : ex.getBindingResult().getFieldErrors()) {
-            erros.add(e.getField() + " : " + e.getDefaultMessage());
-        }
+	@Override
+	protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
+			HttpHeaders headers, HttpStatusCode status, WebRequest request) {
+		List<String> erros = new ArrayList<>();
+		for (FieldError e : ex.getBindingResult().getFieldErrors()) {
+			erros.add(e.getField() + " : " + e.getDefaultMessage());
+		}
 
-        ErroResposta erroResposta = new ErroResposta(status.value(), "Existem campos inválidos", LocalDateTime.now(), erros);
-        return super.handleExceptionInternal(ex, erroResposta, headers, status, request);
-    }
+		ErroResposta erroResposta = new ErroResposta(status.value(), "Existem campos inválidos", LocalDateTime.now(),
+				erros);
+		return super.handleExceptionInternal(ex, erroResposta, headers, status, request);
+	}
 
-    @Override
-    protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex,
-                                                                  HttpHeaders headers, HttpStatusCode status, WebRequest request) {
-        return ResponseEntity.badRequest().body(ex.getMessage());
-    }
+	@Override
+	protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex,
+			HttpHeaders headers, HttpStatusCode status, WebRequest request) {
+		return ResponseEntity.badRequest().body(ex.getMessage());
+	}
 }

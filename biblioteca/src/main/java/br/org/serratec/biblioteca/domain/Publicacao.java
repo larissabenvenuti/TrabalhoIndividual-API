@@ -10,39 +10,38 @@ import jakarta.validation.constraints.Size;
 @Embeddable
 public class Publicacao {
 
-    @NotBlank(message = "Preencha o nome do autor.")
-    @Size(max = 100)
-    @Column(nullable = false, length = 100)
-    private String autor;
-    
-    @Column
-    private LocalDate dataPublicacao;
+	@NotBlank(message = "Preencha o nome do autor.")
+	@Size(max = 100)
+	@Column(nullable = false, length = 100)
+	private String autor;
 
-    @Column
-    private String editora;
-    
-    
-    public String getAutor() {
-        return autor;
-    }
+	@Column
+	private LocalDate dataPublicacao;
 
-    public void setAutor(String autor) {
-        this.autor = autor;
-    }
+	@Column
+	private String editora;
 
-    public LocalDate getDataPublicacao() {
-        return dataPublicacao;
-    }
+	public String getAutor() {
+		return autor;
+	}
 
-    public void setDataPublicacao(LocalDate dataPublicacao) {
-        this.dataPublicacao = dataPublicacao;
-    }
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
 
-    public String getEditora() {
-        return editora;
-    }
+	public LocalDate getDataPublicacao() {
+		return dataPublicacao;
+	}
 
-    public void setEditora(String editora) {
-        this.editora = editora;
-    }
+	public void setDataPublicacao(LocalDate dataPublicacao) {
+		this.dataPublicacao = dataPublicacao;
+	}
+
+	public String getEditora() {
+		return editora;
+	}
+
+	public void setEditora(String editora) {
+		this.editora = editora;
+	}
 }

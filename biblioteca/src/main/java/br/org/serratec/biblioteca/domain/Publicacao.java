@@ -12,13 +12,13 @@ public class Publicacao {
 
     @NotBlank(message = "Preencha o nome do autor.")
     @Size(max = 100)
-    @Column(name = "autor", nullable = false, length = 100)
+    @Column(nullable = false, length = 100)
     private String autor;
     
-    @Column(name = "data_publicacao", nullable = false)
+    @Column
     private LocalDate dataPublicacao;
 
-    @Column(name = "editora", nullable = false)
+    @Column
     private String editora;
     
     

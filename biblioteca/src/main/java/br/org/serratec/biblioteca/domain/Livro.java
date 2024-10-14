@@ -22,7 +22,7 @@ public class Livro {
 	private Long id;
 
 	@NotBlank(message = "Preencha o título do livro.")
-	@Size(max = 100)
+	@Size(max = 100, message = "O tamanho máximo de caracteres deve ser 100.")
 	@Column(nullable = false, length = 100)
 	private String titulo;
 

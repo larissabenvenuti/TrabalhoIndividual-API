@@ -11,7 +11,7 @@ import jakarta.validation.constraints.Size;
 public class Publicacao {
 
 	@NotBlank(message = "Preencha o nome do autor.")
-	@Size(max = 100)
+	@Size(max = 100, message = "O tamanho máximo de caracteres deve ser 100.")
 	@Column(nullable = false, length = 100)
 	private String autor;
 
